@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="20250419_210136.png" alt="" />
+    </div>
+    
+    <div class="search-wrapper">
+  <input type="text" class="search-input" placeholder="Cari akun ML, FF, dll..." id="searchInput">
+  <!-- <i class="fa fa-search search-icon"></i> -->
+</div>
+    <i class="fa-solid fa-mobile telephone" style="color: rgb(247, 255, 9); width: 5px;"></i>
+    
+    <div class="burger">
+        <i class="fa-solid fa-bars menu" style="color: rgb(0, 0, 0)" id="menuToggle"></i>
+      <div class="dropdown" id="dropdownMenu">
+        <a href="" class="a1">HALLO</a>
+        <a href="" class="a2">HALLO</a>
+        <a href="" class="a3">HALLO</a>
+      </div>
+    </div>
+  </nav>
+
+
+  
+<div class="containerkartu">
+  <div class="kartuakun">
+    <img src="Cuplikan layar 2025-04-21 182753.png" alt="">
+    <div class="deskrip">
+      <h3>Mobile Legends<hr></h3>
+      <p>Skin 1000+, Emblem lv 70(max) <br>Collector Lengkap DLL</p>
+    </div>  
+  </div>
+</div>
+<div class="containerkartu">
+  <div class="kartuakun">
+    <img src="Cuplikan layar 2025-04-21 182753.png" alt="">
+    <div class="deskrip">
+      <h3>Mobile Legends<hr></h3>
+      <p>Skin 1000+, Emblem lv 70(max) <br>Collector Lengkap DLL</p>
+    </div>  
+  </div>
+</div>
+<div class="containerkartu">
+  <div class="kartuakun">
+    <img src="Cuplikan layar 2025-04-21 182753.png" alt="">
+    <div class="deskrip">
+      <h3>Mobile Legends<hr></h3>
+      <p>Skin 1000+, Emblem lv 70(max) <br>Collector Lengkap DLL</p>
+    </div>  
+  </div>
+</div>
+<div class="containerkartu">
+  <div class="kartuakun">
+    <img src="Cuplikan layar 2025-04-21 182753.png" alt="">
+    <div class="deskrip">
+      <h3>Mobile Legends<hr></h3>
+      <p>Skin 1000+, Emblem lv 70(max) <br>Collector Lengkap DLL</p>
+    </div>  
+  </div>
+</div>
+
+
+
+
+
+  <script>
+
+    // Dropdown toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    menuToggle.addEventListener("click", function () {
+      dropdownMenu.classList.toggle("show");
+    });
+
+    const searchInput = document.getElementById('searchInput');
+    const listItems = document.querySelectorAll('#accountList li');
+
+    searchInput.addEventListener('keyup', function () {
+      const keyword = this.value.toLowerCase();
+
+      listItems.forEach(function (item) {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(keyword)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
