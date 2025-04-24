@@ -1,15 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --primary: #FFD700;     /* Gold */
+  --accent: #00BFFF;      /* Deep Sky Blue */
+  --background: #111111;  /* Dark background */
+  --text-light: #FFFFFF;
+  --text-muted: #AAAAAA;
+}
 
 a {
     font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
 }
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
+  html, body {
+    background: #111;
+  }
+  #searchInput {
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    max-height: 0%;
+    position: relative;
+    left: 50px;
+}
 
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    /* margin: 10px auto; */
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 2px solid yellow;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    background-color: #111;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .search-input::placeholder {
+    color: #ccc;
+  }
+  
+  .search-input:focus {
+    border-color: #f1ff00;
+    box-shadow: 0 0 10px #f1ff00a4;
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: yellow;
+    pointer-events: none;
+    font-size: 18px;
+  }
   .logo img {
     width: 50px;
     height: 50px;
@@ -25,7 +81,7 @@ a {
     align-items: center;
     background: black;
     border-radius: 0 17px 0 17px;
-    box-shadow: 0 11px 17px rgba(255, 255, 0, 0.68);
+    box-shadow: 0 11px 17px rgba(0, 0, 0, 0.76);
   }
 
   .menu {
@@ -95,92 +151,122 @@ a {
       border: 1px solid black;
       border-radius: 0 30px 0 30px; 
   }
-.containerkartu {
-  display: flex;
   
-  justify-content: center;
-  align-items: center;
-  max-width: 100vw;
-  height: 100vh;
-  background-color: rgb(0, 0, 0);
-  
-}
-.kartuakun {  
-width: 80vw;
-
-}
-.kartuakun img {
-max-width: 100%;
-border-radius: 20px;
-box-shadow: 7px 3px 17px rgba(255, 255, 0, 0.68);
-}
-h3 {
-    color:yellow;
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-    padding: 17px;
-}
-.deskrip {
-    background-color: rgba(255, 255, 255, 0.155);
-    border-radius: 21px 0 ;
-    border-bottom: 2px solid rgb(255, 255, 0);
-    border-right: 1px solid rgb(255, 255, 0);
-    box-shadow: 0 11px 17px rgba(255, 255, 0, 0.68);
-
-}
-p {
-    margin-left: 5px;
-    text-align: center;
-    color: white;
-    padding: 5px;
-}
-hr {
-    border: 1px solid rgb(255, 255, 0);
-    margin-top: 5px;
-}
-#searchInput {
-    color: rgb(0, 0, 0);
-    max-width: 50%;
-    max-height: 0%;
-    position: relative;
-    left: 50px;
-}
-
-.search-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    /* margin: 10px auto; */
+  /* .container-kartu {
+    margin-top: 100px; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 150px;
   }
   
-  .search-input {
-    width: 100%;
-    padding: 10px 40px 10px 15px;
+  .kartu {
+    background: #1a1a1a;
+    width: 260px;
     border: 2px solid yellow;
-    border-radius: 25px;
-    outline: none;
-    font-size: 16px;
-    background-color: #111;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255, 255, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .kartu:hover {
+    transform: scale(1.03);
+  }
+  
+  .kartu img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .kartu .info {
+    padding: 15px;
     color: white;
-    transition: 0.3s;
+    text-align: center;
   }
   
-  .search-input::placeholder {
-    color: #ccc;
-  }
-  
-  .search-input:focus {
-    border-color: #f1ff00;
-    box-shadow: 0 0 10px #f1ff00a4;
-  }
-  
-  .search-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+  .kartu .info h3 {
     color: yellow;
-    pointer-events: none;
-    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .kartu .info p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .harga {
+    font-weight: bold;
+    color: #f1ff00;
+    margin-bottom: 10px;
+  }
+  
+  .btn-beli {
+    padding: 8px 20px;
+    background: yellow;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .btn-beli:hover {
+    background: #e0d800;
+  } */
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 41px;
+    min-height: 100vh;
+    background-color: #111;
+    margin-top: 100px;
+  }
+  .kartu img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+  }
+  .kartu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 31px 0 31px 0; 
+    background: #00000086;
+    text-align: center;
+    overflow: hidden;
+    border: var(--primary) 2px solid;
+    max-width: 25vw;
+    color: white;
+    box-shadow: #f1ff00 0 0 11px;
+    font-family: "Roboto", sans-serif;
+  }
+  .kartu h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: yellow;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .harga h3 {
+    color: yellow;
+    margin-top: 5px;
+  }
+  .info {
+    /* border-top: 2px solid yellow; */
+    padding: 7px;
+  }
+  .tombol {
+    width: 100px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 20px;
+    margin: 5px;
   }
   
