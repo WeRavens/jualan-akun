@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+   
+    #searchInput {
+        color: rgb(255, 255, 255);
+        max-width: 55%;
+        max-height: 0%;
+        position: relative;
+        left: 55px;
+    }
+   
+   
+    .container {
+        margin-bottom: 100px !important;
+    }
+    .kartu {
+        max-width: 75vw;
+    }
+    
+}
